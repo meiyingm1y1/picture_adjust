@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片大小调整工具</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .striped-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .striped-background div {
+            flex: 1;
+            animation: stripeAnimation 10s linear infinite;
+        }
+
+        .striped-background div:nth-child(1) {
+            background: #ff9a9e;
+        }
+
+        .striped-background div:nth-child(2) {
+            background: #fad0c4;
+        }
+
+        .striped-background div:nth-child(3) {
+            background: #fbc2eb;
+        }
+
+        .striped-background div:nth-child(4) {
+            background: #a1c4fd;
+        }
+
+        .striped-background div:nth-child(5) {
+            background: #c2e9fb;
+        }
+
+        @keyframes stripeAnimation {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 450px;
+            z-index: 1;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input[type="file"],
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="striped-background">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="container">
+        <h1>图片大小调整工具</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <label for="file">选择图片文件:</label>
+            <input type="file" id="file" name="file" required>
+
+            <label for="width">宽度 (px):</label>
+            <input type="number" id="width" name="width" required>
+
+            <label for="height">高度 (px):</label>
+            <input type="number" id="height" name="height" required>
+
+            <button type="submit">调整大小</button>
+        </form>
+        <footer>© 2026 魅影m1y1</footer>
+    </div>
+</body>
+</html>
