@@ -8,6 +8,7 @@
 - 支持批量调整目录中所有图片的大小。
 - 提供现代化的网页界面，用户体验良好。
 - 动态背景效果，提升视觉吸引力。
+- 打包为独立的 `.exe` 文件，用户无需安装 Python 环境。
 
 ## 安装依赖
 1. 创建虚拟环境（可选）：
@@ -32,6 +33,9 @@ python app.py
 
 2. 打开浏览器，访问 `http://127.0.0.1:5000`。
 
+## 可执行文件
+ImageResizer.exe
+
 ## 文件结构
 ```
 .
@@ -42,6 +46,9 @@ python app.py
 │   └── index.html      # 网页界面
 ├── uploads/            # 上传的图片存储目录
 ├── outputs/            # 调整后的图片存储目录
+├── dist/               # 打包生成的可执行文件目录
+│   └── ImageResizer.exe # 独立的可执行文件
+├── ImageResizer.spec   # PyInstaller 打包配置文件
 └── README.md           # 项目说明文件
 ```
 
